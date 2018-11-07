@@ -278,6 +278,8 @@
 		<div>Желаю вам удачи на пути к становлению настоящим диванным экспертом в самом хорошем смысле этого слова! :D</div>
 
 		<div>Если вы хотите узнать больше про осознанные сновидения, пожалуйства зарегистрируйтесь на нашем форуме</div>
+		<fieldset>
+			<legend>Регистрация нового пользователя Матрицы:</legend>
 		<form action="http://ya.ru" method="POST" align="left">
 			Ваше имя <input type="text" name="Ваше имя"><br />
 			Ваш возраст <input type="text" name="Ваш возраст"><br />
@@ -299,10 +301,44 @@
 				<option value="Нарокман">Наркоман</option>
 				<option value="Шлюха">Шлюха</option>
 			</select><br>
-			<input type="submit" name="Отправить" /><br />
+			<p></p>
+			<input type="text" name="favstar" placeholder="Любимая порно актриса"
+			required="required"><br>
+			<p></p>
+			<label for="price1">Сколько вы готовы заплатить:</label>
+			<input type="number" name="price1" id="price1" min="100" max="99000" step="130" value="100">
+			<p></p>
+			Выбери свою выгоду:
+			<select size="1" name="price">
+				<option value="0"></option>
+				<option value="15000">15000</option>
+				<option value="25000">25000</option>
+			</select>
+			<p></p>
+			<label for="price">Цена:</label> 
+    		1<input type="range" step="1" min="0" max="100" value="10" id="price" name="price"/>100<br>
+    		<p></p>
+    		<label for="date">Дата второго пришествия:</label>
+    		<input type="date" name="date" id="date"><br>
+    	</fieldset>
+			<button type="reset">Сброс</button>
+			<button type="submit" formmethod="post" formaction="index.html">Отправить</button>
 		</form>
 
+		<form enctype="multipart/form-data" method="post" action="http://localhost:8080/postfile.php">
+ 		<p>
+ 		<label for="xfiles">Загрузите скан разворота паспорта:</label><p></p>
+  		<input type="file" name="file" id="xfiles"multiple />
+ 		</p>
+ 		<p>
+  		<input type="submit" value="Отправить" />
+ 		</p>
+</form>
 <hr>
+<aside style="float: right; width: 200px";>
+	<h1>Бесплатный эротический массаж</h1>
+	<p>Каждое 10-е посещение нашего салона бесплатно. <a href="http://richmen24.ru">Заходи!Горячо!</a></p>
+</aside>
 		<table>
 		<caption>Амплитуда и частота ритмов головного мозга по электроэнцефалограмме</caption>
 			<tr><th>Название</th><th>Частота,Гц</th><th>Амплитуда,мкВ</th><th>Особенности</th></tr>
