@@ -1,0 +1,32 @@
+div{
+	background-color: green;
+	margin: 100px; 
+}
+
+.redbox{
+	background-color: red;
+	margin: 12px;
+}
+#unik {
+	background-color: blue;
+	margin: 20px;
+}
+input[type="text"]{
+	border:2px solid red;
+}
+p{
+	text-align: justify;
+	text-indent: 35px;
+}
+table {
+            border: 2px solid #ccc;
+         /*   border-spacing: 3px;*/
+        	border-spacing: 0px;
+        	text-align: center;
+        }
+         
+        td, th{
+            border: solid 2px #ccc;
+            vertical-align: middle;
+            }
+caption {
