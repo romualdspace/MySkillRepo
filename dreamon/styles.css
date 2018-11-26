@@ -1,4 +1,4 @@
-div{
+/*div{
 	background-color: green;
 	margin: 100px; 
 }
@@ -10,7 +10,7 @@ div{
 #unik {
 	background-color: blue;
 	margin: 20px;
-}
+}*/
 input[type="text"]{
 	border:2px solid red;
 }
