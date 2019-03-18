@@ -33,5 +33,5 @@ total=sum(list)
 result=(total*2)*volume
 
 print(list)
-print('Итого', total)
+print('Итого:', total)
 print('Результат: %3.0f' %(result))
