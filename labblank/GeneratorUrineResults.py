@@ -47,8 +47,7 @@ while i>0:
     print ("Слизь:      отриц.")
     print ("Соли:       отриц.")
     print ("=======================")
-   #Запись в файл
-    #f=open("Генератор анализов.txt", "at" )
+    #Запись в файл
     f.write("Дост. кол-во:  %s" %(volume))
     f.write("\n")
     f.write("Цвет:       %s" %(color))
@@ -81,7 +80,8 @@ while i>0:
     f.write("\n")
     f.write ("=======================")
     f.write("\n")
-    #f.close()
+    #Завершаем цикл
     i-=1
+#Закрываем файл    
 f.close()    
 input("Press Enter to quit")
