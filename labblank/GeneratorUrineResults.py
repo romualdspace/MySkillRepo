@@ -3,6 +3,10 @@ import random
 
 #На входе берем количество необходимых исследований
 i=int(input("Введите количество анализов:"))
+
+#Открываем файл для записи
+f=open("Генератор анализов.txt", "at" )
+
 #Запускаем цикл
 while i>0:
     volume = random.randint(50, 200) #объем мочи
@@ -44,7 +48,7 @@ while i>0:
     print ("Соли:       отриц.")
     print ("=======================")
    #Запись в файл
-    f=open("Генератор анализов.txt", "at" )
+    #f=open("Генератор анализов.txt", "at" )
     f.write("Дост. кол-во:  %s" %(volume))
     f.write("\n")
     f.write("Цвет:       %s" %(color))
@@ -77,6 +81,7 @@ while i>0:
     f.write("\n")
     f.write ("=======================")
     f.write("\n")
-    f.close()
+    #f.close()
     i-=1
+f.close()    
 input("Press Enter to quit")
