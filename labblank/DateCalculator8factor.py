@@ -6,39 +6,55 @@ from colorama import init
 from termcolor import colored
 
 
-a = str('exit')
+a = str('выход')
+b = str('exit')
+monthCounter = [ai for ai in range(1, 13)]
+dayCounter = [bi for bi in range(1, 32)]
+yearCounter = [ci for ci in range(1900, 2200)]
 
-# Получаем от пользователя строки дат
-dateSelect = input(
-    'Дата отбора в формате ДД ММ ГГГГ(разделены пробелами):' '\n')
-
-# Циклический ввод даты изготовления
 while True:
     try:
-        dateRelease = input(
-            'Дата изготовления в формате ДД ММ ГГГГ(разделены пробелами):' '\n')
-        if dateRelease == a:
+        dateSelect = input(
+            'Дата отбора в формате ДД ММ ГГГГ(разделены пробелами):' '\n    ')
+        if a == dateSelect or b == dateSelect:
             sys_exit()
         else:
-            # Рассортировываем полученные даты по переменным
             dayS, monthS, yearS = map(int, dateSelect.split(' '))
-            dayR, monthR, yearR = map(int, dateRelease.split(' '))
-
-# Преобразуем полученные переменные в тип datetime
             dateS = datetime.date(day=dayS, month=monthS, year=yearS)
-            dateR = datetime.date(day=dayR, month=monthR, year=yearR)
-
-# Производим вычисление
-            diffDelta = relativedelta(dateS, dateR)
-
-# Результат
-            print(colored('Год(а): ', 'blue'), diffDelta.years)
-            print(colored('Месяцев:', 'blue'), diffDelta.months)
-            print(colored('Дней:   ', 'blue'), diffDelta.days + 1)
-            print('=======================================')
-            print('Для изменения даты отбора перезапустите программу')
-            print('Для выхода наберите exit')
-            print('=======================================')
-    except ValueError:
+    except (ValueError, NameError):
         print(colored(
-            'Дата введена неверно. Перепроверьте правильность введеной даты.', 'white', 'on_red'))
+            'Дата введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
+    if len(dateSelect) == 10 and monthS in monthCounter and dayS in dayCounter and yearS in yearCounter:
+        while True:
+            try:
+                dateRelease = input(
+                    'Дата изготовления в формате ДД ММ ГГГГ(разделены пробелами):' '\n    ')
+                if a == dateRelease or b == dateRelease:
+                    sys_exit()
+                else:
+                    dayR, monthR, yearR = map(int, dateRelease.split(' '))
+                    dateR = datetime.date(day=dayR, month=monthR, year=yearR)
+
+                    if len(dateRelease) == 10 and monthS in monthCounter and dayS in dayCounter and yearS in yearCounter:
+
+                        diffDelta = relativedelta(dateS, dateR)
+
+                        print('-----------------')
+                        print(colored('    Год(а):    ', 'blue'), diffDelta.years)
+                        print(colored('    Месяца(ев):', 'blue'),
+                              diffDelta.months)
+                        print(colored('    День(ей):  ', 'blue'),
+                              diffDelta.days + 1)
+                        print('-----------------')
+                        print('Для изменения даты отбора перезапустите программу')
+                        print('Для выхода наберите exit или выход')
+                        print('=======================================')
+                    else:
+                        print(colored(
+                            'Дата введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
+            except (ValueError, NameError):
+                print(colored(
+                    'Дата введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
+    else:
+        print(colored(
+            'Дата введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
