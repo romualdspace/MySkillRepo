@@ -12,7 +12,7 @@ monthCounter = [ai for ai in range(1, 13)]
 dayCounter = [bi for bi in range(1, 32)]
 yearCounter = [ci for ci in range(1900, 2200)]
 
-# Цикл проверки введенный даты ОТБОРА пробы
+# Цикл проверки введенной даты ОТБОРА пробы
 while True:
     try:
         dateSelect = input(
@@ -34,7 +34,7 @@ while True:
             'Дата отбора введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
         continue
 
-# Цикл проверки введенный даты ИССЛЕДОВАНИЯ пробы
+# Цикл проверки введенной даты ИССЛЕДОВАНИЯ пробы
     while True:
         try:
             dateRelease = input(

@@ -35,4 +35,3 @@ while g>0:
                 except (ValueError, NameError):
                     print('errorD')
                     continue
-
