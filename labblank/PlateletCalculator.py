@@ -21,40 +21,40 @@ while f > 0:
 
         while g > 0:
             try:
-                int1 = input("Первая клетка:")
-                if a == int1 or b == int1:
+                firstCell = input("Первая клетка:")
+                if a == firstCell or b == firstCell:
                     sys_exit()
                 else:
-                    int1 = int(int1)
+                    firstCell = int(firstCell)
             except (ValueError, NameError):
-                print('int1Error')
+                print('firstCellError')
                 continue
 
             while g > 0:
                 try:
-                    int2 = input("Вторая клетка:")
-                    if a == int2 or b == int2:
+                    secondCell = input("Вторая клетка:")
+                    if a == secondCell or b == secondCell:
                         sys_exit()
                     else:
-                        int2 = int(int2)
+                        secondCell = int(secondCell)
                 except (ValueError, NameError):
-                    print('int2Error')
+                    print('secondCellError')
                     continue
 
                 while g > 0:
                     try:
-                        int3 = input("Третья клетка:")
-                        if a == int3 or b == int3:
+                        thirdCell = input("Третья клетка:")
+                        if a == thirdCell or b == thirdCell:
                             sys_exit()
                         else:
-                            int3 = int(int3)
+                            thirdCell = int(thirdCell)
                     except (ValueError, NameError):
-                        print('int3Error')
+                        print('thirdCellError')
                         continue
 
 
 # Получаем  примерное количество клеток
-                    bigint = ((int1 + int2 + int2) / 3) * 25
+                    bigint = ((firstCell + secondCell + thirdCell) / 3) * 25
 
 # Производим расчет количества клеток в каждой из 25 клеток
                     analog = bigint
