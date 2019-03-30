@@ -1,33 +1,53 @@
 import random
+from sys import stdin, exit as sys_exit
+
 g = 1
 f = 1
+a = str('выход')
+b = str('exit')
 
 while f > 0:
     # Получаем входные данные от пользователя и циклично их проверяем на корректность
     while g > 0:
         try:
-            volume = (int(input("Введите объем дозы в мл:"))) / 1000
+            volume = (input("Введите объем дозы в мл:"))
+            if a == volume or b == volume:
+                sys_exit()
+            else:
+                volume = int(volume) / 1000
         except (ValueError, NameError):
             print('VolumeError')
             continue
 
         while g > 0:
             try:
-                int1 = int(input("Первая клетка:"))
+                int1 = input("Первая клетка:")
+                if a == int1 or b == int1:
+                    sys_exit()
+                else:
+                    int1 = int(int1)
             except (ValueError, NameError):
                 print('int1Error')
                 continue
 
             while g > 0:
                 try:
-                    int2 = int(input("Вторая клетка:"))
+                    int2 = input("Вторая клетка:")
+                    if a == int2 or b == int2:
+                        sys_exit()
+                    else:
+                        int2 = int(int2)
                 except (ValueError, NameError):
                     print('int2Error')
                     continue
 
                 while g > 0:
                     try:
-                        int3 = int(input("Третья клетка:"))
+                        int3 = input("Третья клетка:")
+                        if a == int3 or b == int3:
+                            sys_exit()
+                        else:
+                            int3 = int(int3)
                     except (ValueError, NameError):
                         print('int3Error')
                         continue
