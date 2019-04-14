@@ -52,14 +52,15 @@ while True:
                         diffDelta = relativedelta(dateS, dateR)
 
                         print('-----------------')
-                        print('    Год(а):    ',
+                        print(colored('    Год(а):    ', 'blue'),
                               diffDelta.years)
-                        print('    Месяца(ев):',
+                        print(colored('    Месяца(ев):', 'blue'),
                               diffDelta.months)
-                        print('    День(ей):  ',
+                        print(colored('    День(ей):  ', 'blue'),
                               diffDelta.days + 1)
                         print('-----------------')
-                        print('Для изменения даты отбора перезапустите программу')
+                        print(
+                            'Для изменения даты отбора перезапустите программу')
                         print('Для выхода наберите exit или выход')
                         print('=======================================')
                     else:
@@ -67,5 +68,5 @@ while True:
                 else:
                     raise ValueError
         except (ValueError, NameError):
-            print(
-                'Дата изготовления введена неверно. Проверьте правильность введеной даты.')
+            print(colored(
+                'Дата изготовления введена неверно. Проверьте правильность введеной даты.', 'white', 'on_red'))
